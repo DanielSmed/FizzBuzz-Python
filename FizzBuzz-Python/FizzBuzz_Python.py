@@ -1,15 +1,20 @@
-print("A little game of FizzBuzz you are to put in 3 integers when promted and then the game will run.")
+print("A little game of FizzBuzz. \n")
 
-first = int(input("Fizz on numbers that are a multiple of: "))
-second = int(input("Buzz on numbers that are a multiple of: "))
-Last_number = int(input("Run until what number: "))
+NumberOfTabels = int(input("Number of multiplecation tabels (int): "))
+Words = []
+Tabels = []
+
+
+for i in range(NumberOfTabels):
+    Tabels.append(int(input("Multiplecation tabel where numbers that are a multiple of (int): ")))
+    Words.append(input("Word for the multiplecation tabel (string): "))
+Last_number = int(input("\nRun until what number (int): "))
 
 for i in range(1,Last_number+1):
     answer = ""
-    if i % first == 0:
-        answer += "Fizz"
-    if i % second == 0:
-        answer += "Buzz"
+    for j in range(NumberOfTabels):
+        if i % Tabels[j] == 0:
+            answer += Words[j]
     if answer == "":
         answer = str(i)
     print(answer)
